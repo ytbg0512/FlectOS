@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="enabling-controls.css">
+        <title>FlectOS</title>
+    </head>
+    <body>
+        <h1>FlectOS 컨트롤 활성화하기</h1>
+        <div>
+            PowerPoint 2013 혹은 그 이상 버전을 사용하신다면 일부 컨트롤(Web Browser)을 직접 활성화해야 할 수 있습니다.
+            자세한 내용은 <a href='https://docs.microsoft.com/en-US/office365/troubleshoot/administration/insert-scriptable-activex-control'>이곳 (영문)</a>에서 확인해주세요. <br /><br />
+            FlectOS를 정상적으로 사용하려면 Web Browser ActiveX 컨트롤을 활성화해야 합니다. <br />
+            이는 다음과 같은 방법으로 할 수 있습니다: <br /><br />
+
+            <h3>1. 레지스트리 편집기를 엽니다.</h3>
+            레지스트리 편집기는 Win + R 단축키를 눌러 실행 창을 연 후, "regedit"을 입력하여 열거나, Windows 검색에서 "레지스트리 편집기" 또는 "regedit"을 입력하여 열 수 있습니다. <br /><br />
+            <h3>2. 레지스트리 값을 수정합니다.</h3>
+            <h4>이 작업을 진행하기 전 자신이 정확히 무엇을 하는 것인지 이해하시고 꼭 레지스트리 백업을 만들어 놓으시기를 바랍니다.</h4>
+            <h4>잘못된 레지스트리 값 수정은 Windows 시스템에 심각한 손상을 초래할 수 있습니다!</h4>
+            레지스트리 값을 기본값에서 0으로 수정하면 됩니다. <br /><br />
+
+            우선 Ctrl + F 단축키를 눌러 '찾기' 창을 엽니다. <br />
+            그런 다음 "COM Compatibility"를 '찾을 내용'에 입력한 후 Enter를 누릅니다. <br />
+            레지스트리 편집기가 "COM Compatibility" 경로를 찾을 것입니다. 레지스트리 편집기가 찾은 경로가 Office와 관련되어 있는 경로라면, 다음의 경로를 찾습니다: <br />
+            <h4>{8856F961-340A-11D0-A96B-00C04FD705A2}</h4>
+            그런 다음, 위 경로의 'Compatibility Flags'의 값을 0으로 수정합니다. <br /><br />
+
+            이 도움말이 문제를 해결하는 데에 도움이 되었으면 좋겠습니다.
+        </div>
+    </body>
+</html>
